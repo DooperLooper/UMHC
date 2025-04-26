@@ -1,0 +1,157 @@
+/* Basic Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;  /* Base font */
+    color: #000;                    /* Black text */
+    background: #fff;               /* White background */
+    line-height: 1.6;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Header and Nav */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: #f9f9f9;  /* light grey header background for contrast */
+    border-bottom: 1px solid #ddd;
+  }
+  header .logo img {
+    height: 50px; /* adjust as needed for logo size */
+  }
+  .main-nav {
+    position: relative;
+  }
+  .nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  .nav-menu li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+  }
+  .nav-menu li a:hover {
+    text-decoration: underline;
+  }
+  /* Mobile menu initially hidden */
+  #menu-toggle {
+    display: none;  /* hidden by default, shown in mobile styles */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  /* Main Content */
+  main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;  /* center content area */
+  }
+  .honors-postings h1 {
+    font-size: 2em;
+    margin-bottom: 0.2em;
+  }
+  .honors-postings hr {
+    border: none;
+    border-top: 2px solid #ccc;
+    margin-bottom: 1em;
+  }
+  .membership, .social-update, .news {
+    margin-bottom: 2em;
+  }
+  .membership h3, .social-update h3, .news h3 {
+    font-size: 1.25em;
+    margin-bottom: 0.5em;
+  }
+  .membership p, .social-update p, .news p {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+  }
+  .social-update {
+    /* Possibly highlight this section */
+    background: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  .social-update h3 {
+    font-weight: bold;
+  }
+  .news p strong {
+    /* highlight the university name */
+    color: #000;
+    font-weight: bold;
+  }
+  
+  /* Footer */
+  footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9em;
+    margin-top: 40px;
+  }
+  footer p {
+    margin: 0;
+  }
+  
+  /* Cookie Banner */
+  #cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+  }
+  #cookie-banner p {
+    display: inline; /* keep text and button on same line */
+    margin-right: 10px;
+    font-size: 0.9em;
+  }
+  #cookie-banner button {
+    background: #4CAF50; /* green accept button */
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 4px;
+  }
+  #cookie-banner button:hover {
+    background: #45a049;
+  }
+  
+  /* Responsive Styles for Mobile */
+  @media (max-width: 600px) {
+    .nav-menu {
+      /* hide the menu and stack vertically */
+      flex-direction: column;
+      background: #f9f9f9;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 200px;
+      display: none; /* hidden until toggled */
+    }
+    .nav-menu.open {
+      display: block;
+    }
+    #menu-toggle {
+      display: block; /* show toggle on mobile */
+    }
+  }
+  
