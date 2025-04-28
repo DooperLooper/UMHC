@@ -15,30 +15,38 @@ body {
 
 /* Header */
 header {
-  background: #004165;
+  background: #004165; /* DSU dark blue */
   padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .logo a {
   color: white;
   font-family: 'Crimson Pro', serif;
-  font-size: 1.8rem;
+  font-size: 2rem;
   text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
 .nav-menu a {
   color: white;
-  margin-left: 1.5rem;
   text-decoration: none;
   font-weight: bold;
 }
 
 .nav-menu a:hover,
 .nav-menu .active {
-  color: #00A9E0;
+  color: #00A9E0; /* Trojan Blue accent */
 }
 
 /* Main */
@@ -52,7 +60,7 @@ main {
 .hero {
   text-align: center;
   padding: 5rem 2rem;
-  background: #00A9E0;
+  background: #00A9E0; /* Trojan Blue */
   color: white;
 }
 
@@ -70,7 +78,7 @@ main {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.75rem 1.5rem;
-  background: #004165;
+  background: #004165; /* DSU Blue */
   color: white;
   text-decoration: none;
   border-radius: 4px;
@@ -89,14 +97,14 @@ main {
 }
 
 .info {
-  background: #f4f4f4;
+  background: #f4f4f4; /* Light gray */
   padding: 1.5rem;
   border-radius: 8px;
 }
 
 /* Footer */
 footer {
-  background: #004165;
+  background: #004165; /* DSU dark blue */
   color: white;
   text-align: center;
   padding: 1rem;
@@ -104,7 +112,7 @@ footer {
 }
 
 footer a {
-  color: #00A9E0;
+  color: #00A9E0; /* Trojan Blue accent links */
 }
 
 footer a:hover {
