@@ -1,91 +1,143 @@
+<!-- conference.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UMHC 2027 – Conference Details</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Conference schedule, registration info, travel & lodging, and campus map for the UMHC 2027 annual conference at Dakota State University." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Conference Event JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "UMHC 2027 Annual Conference",
+    "startDate": "2027-04-05T09:00",
+    "endDate": "2027-04-07T12:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Dakota State University",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "820 N Washington Ave",
+        "addressLocality": "Madison",
+        "addressRegion": "SD",
+        "postalCode": "57042",
+        "addressCountry": "US"
+      }
+    }
+  }
+  </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<header>
-  <div class="logo">
-    <img src="assets/images/logo.png" alt="UMHC Logo">
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <img src="assets/images/logo.svg" alt="Upper Midwest Honors Council logo" width="100">
+      </div>
+      <button id="menu-toggle"
+              aria-label="Toggle navigation"
+              aria-expanded="false"
+              aria-controls="main-nav">
+        ☰
+      </button>
+      <nav id="main-nav" class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="conference.html" class="active">Conference 2027</a></li>
+          <li><a href="members.html">Members</a></li>
+          <li><a href="forms.html">Forms</a></li>
+          <li><a href="review.html">Heartland Review</a></li>
+          <li><a href="opportunities.html">Opportunities</a></li>
+        </ul>
+        <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-content">
+      <h1>Annual Conference 2027</h1>
+      <p>Join us for the UMHC 2027 Annual Conference at Dakota State University in Madison, South Dakota!</p>
+      <a href="#registration" class="button">Register Now</a>
+    </section>
+
+    <section class="schedule page-content">
+      <h2>Conference Schedule</h2>
+      <details>
+        <summary><strong>Day 1 – April 5, 2027</strong></summary>
+        <ul>
+          <li><strong>9:00 AM:</strong> Opening Ceremony</li>
+          <li><strong>10:30 AM:</strong> Keynote Address</li>
+          <li><strong>1:00 PM:</strong> Breakout Sessions</li>
+        </ul>
+      </details>
+      <details>
+        <summary><strong>Day 2 – April 6, 2027</strong></summary>
+        <ul>
+          <li><strong>9:00 AM:</strong> Student Research Presentations</li>
+          <li><strong>1:00 PM:</strong> Faculty Workshops</li>
+        </ul>
+      </details>
+      <details>
+        <summary><strong>Day 3 – April 7, 2027</strong></summary>
+        <ul>
+          <li><strong>9:00 AM:</strong> Panel Discussions</li>
+          <li><strong>12:00 PM:</strong> Closing Ceremony</li>
+        </ul>
+      </details>
+    </section>
+
+    <section id="registration" class="page-content">
+      <h2>Registration</h2>
+      <p>Registration opens Fall 2026. Please check back for the registration form and deadlines.</p>
+    </section>
+
+    <section class="travel-info page-content">
+      <h2>Travel &amp; Lodging</h2>
+      <h3>Where to Stay</h3>
+      <p>Hotel information and special conference rates will be available soon.</p>
+      <h3>Travel Tips</h3>
+      <p>Nearest Airport: Sioux Falls Regional Airport (FSD) – 50 miles from DSU campus.</p>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps?q=Dakota%20State%20University%2C%20Madison%2C%20SD&output=embed"
+          width="100%"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          title="Map of Dakota State University">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Upper Midwest Regional Honors Council – All Rights Reserved.</p>
+  </footer>
+
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">↑</button>
+
+  <div id="cookie-banner" role="dialog" aria-live="polite">
+    <p>This website uses cookies to improve your experience. <a href="privacy.html">Learn more</a>.</p>
+    <button id="cookie-accept">Accept</button>
+    <button id="cookie-decline">Decline</button>
   </div>
-  <nav class="main-nav">
-    <ul class="nav-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="conference.html" class="active">Conference 2027</a></li>
-      <li><a href="members.html">Members</a></li>
-      <li><a href="forms.html">Forms</a></li>
-      <li><a href="review.html">Heartland Review</a></li>
-      <li><a href="opportunities.html">Opportunities</a></li>
-    </ul>
-    <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
-  </nav>
-</header>
 
-<main>
-  <section class="page-content">
-    <h1>Annual Conference 2027</h1>
-    <p>Join us for the UMHC 2027 Annual Conference at Dakota State University in Madison, South Dakota!</p>
-    <a href="#registration" class="button">Register Now</a>
-  </section>
-
-  <section class="schedule">
-    <h2>Conference Schedule</h2>
-
-    <details>
-      <summary><strong>Day 1 – April 5, 2027</strong></summary>
-      <ul>
-        <li><strong>9:00 AM:</strong> Opening Ceremony</li>
-        <li><strong>10:30 AM:</strong> Keynote Address</li>
-        <li><strong>1:00 PM:</strong> Breakout Sessions</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary><strong>Day 2 – April 6, 2027</strong></summary>
-      <ul>
-        <li><strong>9:00 AM:</strong> Student Research Presentations</li>
-        <li><strong>1:00 PM:</strong> Faculty Workshops</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary><strong>Day 3 – April 7, 2027</strong></summary>
-      <ul>
-        <li><strong>9:00 AM:</strong> Panel Discussions</li>
-        <li><strong>12:00 PM:</strong> Closing Ceremony</li>
-      </ul>
-    </details>
-  </section>
-
-  <section id="registration" class="page-content">
-    <h2>Registration</h2>
-    <p>Registration opens Fall 2026. Please check back for the registration form and deadlines.</p>
-  </section>
-
-  <section class="travel-info page-content">
-    <h2>Travel & Lodging</h2>
-    <h3>Where to Stay</h3>
-    <p>Hotel information and special conference rates will be available soon.</p>
-
-    <h3>Travel Tips</h3>
-    <p>Nearest Airport: Sioux Falls Regional Airport (FSD) – 50 miles from DSU campus.</p>
-  </section>
-</main>
-
-<footer>
-  <p>© 2027 UPPER MIDWEST REGIONAL HONORS COUNCIL – All Rights Reserved.</p>
-</footer>
-
-<div id="cookie-banner">
-  <p>This website uses cookies to optimize your experience. By clicking accept, your data will be aggregated with all other user data.</p>
-  <button id="cookie-accept">Accept</button>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
