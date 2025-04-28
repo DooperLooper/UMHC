@@ -2,7 +2,7 @@
 
 // Mobile menu toggle + a11y
 const menuToggle = document.getElementById('menu-toggle');
-const navMenu = document.querySelector('.nav-menu');
+const navMenu    = document.querySelector('.nav-menu');
 menuToggle.addEventListener('click', () => {
   const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
   menuToggle.setAttribute('aria-expanded', String(!expanded));
