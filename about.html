@@ -1,46 +1,55 @@
+<!-- about.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Upper Midwest Honors Council – About</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Learn about the Upper Midwest Honors Council: our mission, history, and member institutions."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<header>
-  <div class="logo">
-    <img src="assets/images/logo.png" alt="UMHC Logo" />
-  </div>
-  <nav class="main-nav">
-    <ul class="nav-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="conference.html">Annual Conference</a></li>
-      <li><a href="members.html">Members &amp; Leadership</a></li>
-      <li><a href="forms.html">Forms</a></li>
-      <li><a href="review.html">The Heartland Review</a></li>
-      <li><a href="opportunities.html">Honors Opportunities</a></li>
-    </ul>
-    <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
-  </nav>
-</header>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<main>
-  <section class="page-content">
-    <h1>About UMHC</h1>
-    <p>Learn more about the Upper Midwest Honors Council, its mission, and its impact on honors education across the region.</p>
-  </section>
-</main>
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <img src="assets/images/logo.svg" alt="Upper Midwest Honors Council logo" width="100"/>
+      </div>
+      <button id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">☰</button>
+      <nav id="main-nav" class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="conference.html">Conference 2027</a></li>
+          <li><a href="members.html">Members</a></li>
+          <li><a href="opportunities.html">Opportunities</a></li>
+        </ul>
+        <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+      </nav>
+    </div>
+  </header>
 
-<footer>
-  <p>© 2025 UPPER MIDWEST REGIONAL HONORS COUNCIL – All Rights Reserved.</p>
-</footer>
+  <main id="main-content">
+    <section class="page-content">
+      <h1>About UMHC</h1>
+      <p>The Upper Midwest Honors Council (UMHC) is a consortium of honors programs across the Midwest dedicated to fostering academic excellence, leadership, and community engagement among students.</p>
+      <h2>Our Mission</h2>
+      <p>To support and advance honors education by facilitating collaboration, professional development, and scholarly exchange among member institutions.</p>
+      <h2>Our History</h2>
+      <p>Founded in 1990, UMHC began as a small gathering of five universities. Today, we represent over a dozen institutions committed to enriching the undergraduate experience.</p>
+    </section>
+  </main>
 
-<div id="cookie-banner">
-  <p>This website uses cookies to analyze traffic and optimize your experience. By clicking accept, your data will be aggregated with all other user data.</p>
-  <button id="cookie-accept">Accept</button>
-</div>
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">↑</button>
 
-<script src="script.js"></script>
+  <footer>
+    <p>© 2025 UPPER MIDWEST REGIONAL HONORS COUNCIL – All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
