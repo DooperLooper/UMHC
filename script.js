@@ -1,37 +1,61 @@
-// Toggle mobile menu open/close
+/// Mobile Menu Toggle
 const menuToggle = document.getElementById('menu-toggle');
-const navMenu   = document.querySelector('.nav-menu');
+const navMenu = document.querySelector('.nav-menu');
 
-menuToggle.addEventListener('click', function() {
-  // Toggle the 'open' class on the nav menu to show/hide it
-  if (navMenu.classList.contains('open')) {
-    navMenu.classList.remove('open');
-  } else {
-    navMenu.classList.add('open');
-  }
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('open');
 });
 
-// Hide mobile menu when a nav link is clicked (optional enhancement)
-navMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth <= 600) {
-      navMenu.classList.remove('open');
+// Countdown Timer
+const countdownEl = document.getElementById('countdown');
+if (countdownEl) {
+  const targetDate = new Date("April 5, 2027 09:00:00").getTime();
+  
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+    
+    if (distance < 0) {
+      countdownEl.textContent = "The conference has started!";
+      return;
     }
-  });
-});
+    
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }
+  
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+}
 
-// Cookie banner functionality
+// Cookie Consent
 const cookieBanner = document.getElementById('cookie-banner');
 const cookieAcceptBtn = document.getElementById('cookie-accept');
 
-cookieAcceptBtn.addEventListener('click', () => {
-  // Hide the cookie banner when Accept is clicked
-  cookieBanner.style.display = 'none';
-  // (Optional: set a flag in localStorage to remember consent)
-  // localStorage.setItem('umhc_cookies_accepted', 'true');
-});
+if (cookieBanner) {
+  if (localStorage.getItem('umhc_cookies_accepted') === 'true') {
+    cookieBanner.style.display = 'none';
+  }
+  
+  cookieAcceptBtn.addEventListener('click', () => {
+    cookieBanner.style.display = 'none';
+    localStorage.setItem('umhc_cookies_accepted', 'true');
+  });
+}
 
-// Optional: Check localStorage on load to see if consent given
-// if (localStorage.getItem('umhc_cookies_accepted') === 'true') {
-//   cookieBanner.style.display = 'none';
-// }
+// Scroll Animations
+const animatedElems = document.querySelectorAll('.animate-on-scroll');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animated');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+animatedElems.forEach(elem => observer.observe(elem));
