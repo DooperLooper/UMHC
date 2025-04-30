@@ -7,7 +7,7 @@
   /* Primary palette */
   --color-primary: #003f5c;        /* deep navy */
   --color-secondary: #00a9e0;      /* bright cyan */
-  --color-accent: #24656a;         /* golden highlight */
+  --color-accent: #00cbda;         /* golden highlight */
   --color-muted: #6b7c93;          /* soft gray-blue */
   --color-bg: #fafafa;             /* off-white */
   --color-surface: #ffffff;        /* cards & surfaces */
@@ -173,7 +173,7 @@ main {
   font-family: 'Crimson Pro', serif;
   font-size: 2.75rem;
   margin-bottom: var(--spacing);
-  color: var(--color-primary);
+  color: var(--color-bg);
 }
 .page-content h2 {
   font-size: 1.75rem;
@@ -220,7 +220,7 @@ main {
 }
 .button:hover,
 .button:focus {
-  background: #e59400;
+  background: #00c6e5;
   transform: translateY(-2px);
 }
 
