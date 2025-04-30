@@ -173,7 +173,13 @@ main {
   font-family: 'Crimson Pro', serif;
   font-size: 2.75rem;
   margin-bottom: var(--spacing);
-  color: var(--color-bg);
+  color: var(--color-primy);
+}
+.hero2 h1 {
+  font-family: 'Crimson Pro', serif;
+  font-size: 2.75rem;
+  margin-bottom: var(--spacing);
+  color: var(--color-primy);
 }
 .page-content h2 {
   font-size: 1.75rem;
