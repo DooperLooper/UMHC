@@ -179,7 +179,7 @@ main {
   font-family: 'Crimson Pro', serif;
   font-size: 2.75rem;
   margin-bottom: var(--spacing);
-  color: var(--color-primy);
+  color: var(--color-bg);
 }
 .page-content h2 {
   font-size: 1.75rem;
