@@ -72,5 +72,31 @@
     <p>© 2025 UPPER MIDWEST REGIONAL HONORS COUNCIL – All Rights Reserved.</p>
   </footer>
   <script src="script.js" defer></script>
+  <script>
+document.getElementById('presentationForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = {
+    name: form.name.value,
+    university: form.university.value,
+    status: form.status.value,
+    presentation: form.presentation.value,
+    title: form.title.value,
+    abstract: form.abstract.value
+  };
+  const res = await fetch('/submit-presentation', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+  if (res.ok) {
+    alert('Submission received!');
+    form.reset();
+    document.getElementById('charCount').textContent = '0/500';
+  } else {
+    alert('Submission failed.');
+  }
+});
+</script>
 </body>
 </html>
