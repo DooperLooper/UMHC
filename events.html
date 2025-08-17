@@ -51,41 +51,41 @@
     <p>© 2025 UPPER MIDWEST REGIONAL HONORS COUNCIL – All Rights Reserved.</p>
   </footer>
   <script src="script.js" defer></script>
-  <script>
-    async function loadEvents() {
-      const res = await fetch('/events');
-      const events = await res.json();
-      const list = document.getElementById('eventList');
-      list.innerHTML = '';
-      events.forEach(ev => {
-        const li = document.createElement('li');
-        li.innerHTML = `<strong>${ev.title}</strong> – ${ev.date}<br>${ev.description}`;
-        list.appendChild(li);
-      });
-    }
+  <script type="module">
+import { db } from './firebase.js';
+import { addDoc, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
 
-    document.getElementById('eventForm').addEventListener('submit', async e => {
-      e.preventDefault();
-      const form = e.target;
-      const data = {
-        title: form.title.value,
-        date: form.date.value,
-        description: form.description.value
-      };
-      const res = await fetch('/add-event', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-      if (res.ok) {
-        form.reset();
-        loadEvents();
-      } else {
-        alert('Failed to add event.');
-      }
-    });
+async function loadEvents() {
+  const snapshot = await getDocs(collection(db, 'events'));
+  const list = document.getElementById('eventList');
+  list.innerHTML = '';
+  snapshot.forEach(doc => {
+    const ev = doc.data();
+    const li = document.createElement('li');
+    li.innerHTML = `<strong>${ev.title}</strong> – ${ev.date}<br>${ev.description}`;
+    list.appendChild(li);
+  });
+}
 
+const form = document.getElementById('eventForm');
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const data = {
+    title: form.title.value,
+    date: form.date.value,
+    description: form.description.value
+  };
+  try {
+    await addDoc(collection(db, 'events'), data);
+    form.reset();
     loadEvents();
+  } catch (err) {
+    console.error(err);
+    alert('Failed to add event.');
+  }
+});
+
+loadEvents();
   </script>
 </body>
 </html>
