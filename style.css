@@ -1,19 +1,13 @@
-/* style.css – All-Out Visual Upgrade */
-
-/*──────────────────────────┐
-│    Color & Spacing Vars  │
-└──────────────────────────*/
-:root {
-  /* Primary palette */
-  --color-primary: #003f5c;        /* deep navy */
-  --color-secondary: #00a9e0;      /* bright cyan */
-  --color-accent: #00cbda;         /* golden highlight */
-  --color-muted: #6b7c93;          /* soft gray-blue */
-  --color-bg: #fafafa;             /* off-white */
-  --color-surface: #ffffff;        /* cards & surfaces */
-  --color-text: #2e3a46;           /* dark slate */
-  --radius: 0.75rem;               /* border radius */
-  --spacing: 1.5rem;               /* base spacing */
+:root { 
+  --color-primary: #003f5c;
+  --color-secondary: #00a9e0;
+  --color-accent: #00cbda;
+  --color-muted: #6b7c93;
+  --color-bg: #fafafa;
+  --color-surface: #ffffff;
+  --color-text: #2e3a46;
+  --radius: 0.75rem;
+  --spacing: 1.5rem;
   --transition: 0.3s ease;
 }
 
@@ -24,9 +18,6 @@
   --color-muted: #444;
 }
 
-/*──────────────────────────┐
-│    Global Reset & Base   │
-└──────────────────────────*/
 *,
 *::before,
 *::after {
@@ -45,15 +36,11 @@ body {
   color: var(--color-text);
 }
 
-/* Utility classes */
 .hidden { display: none !important; }
 .mt-sm { margin-top: calc(var(--spacing) / 2); }
 .mt   { margin-top: var(--spacing); }
 .mb   { margin-bottom: var(--spacing); }
 
-/*──────────────────────────┐
-│       Skip Link         │
-└──────────────────────────*/
 .skip-link {
   position: absolute;
   top: -3rem;
@@ -69,9 +56,6 @@ body {
   top: 1rem;
 }
 
-/*──────────────────────────┐
-│        Header & Nav      │
-└──────────────────────────*/
 header {
   position: sticky;
   top: 0;
@@ -90,7 +74,6 @@ header {
 .logo img {
   max-height: 50px;
 }
-/* Hide hamburger on desktop */
 #menu-toggle {
   display: none;
   font-size: 1.5rem;
@@ -133,9 +116,7 @@ header {
   transform: scaleX(1);
 }
 
-/* Mobile nav */
 @media (max-width: 768px) {
-  /* Show hamburger only on mobile */
   #menu-toggle {
     display: block;
   }
@@ -158,16 +139,12 @@ header {
   }
 }
 
-/*──────────────────────────┐
-│         Main Layout      │
-└──────────────────────────*/
 main {
   max-width: 1100px;
   margin: 0 auto;
   padding: var(--spacing);
 }
 
-/* Page headings */
 .page-content h1,
 .hero h1 {
   font-family: 'Crimson Pro', serif;
@@ -181,9 +158,6 @@ main {
   color: var(--color-primary);
 }
 
-/*──────────────────────────┐
-│          Hero            │
-└──────────────────────────*/
 .hero {
   position: relative;
   padding: calc(var(--spacing) * 3) var(--spacing);
@@ -203,9 +177,6 @@ main {
   margin-top: var(--spacing);
 }
 
-/*──────────────────────────┐
-│        Buttons           │
-└──────────────────────────*/
 .button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -224,9 +195,6 @@ main {
   transform: translateY(-2px);
 }
 
-/*──────────────────────────┐
-│       Info Blocks        │
-└──────────────────────────*/
 .info-blocks {
   display: grid;
   gap: var(--spacing);
@@ -253,9 +221,6 @@ main {
   color: var(--color-muted);
 }
 
-/*──────────────────────────┐
-│       Page Content       │
-└──────────────────────────*/
 .page-content {
   background: var(--color-surface);
   padding: var(--spacing);
@@ -272,9 +237,6 @@ main {
   margin-bottom: var(--spacing);
 }
 
-/*──────────────────────────┐
-│       Conference Map     │
-└──────────────────────────*/
 .map-container {
   margin-top: var(--spacing);
   border-radius: var(--radius);
@@ -282,9 +244,6 @@ main {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/*──────────────────────────┐
-│      Scroll-To-Top       │
-└──────────────────────────*/
 .scroll-to-top {
   position: fixed;
   bottom: 2rem;
@@ -306,9 +265,6 @@ main {
   visibility: visible;
 }
 
-/*──────────────────────────┐
-│        Footer            │
-└──────────────────────────*/
 footer {
   background: var(--color-primary);
   color: #fff;
@@ -317,9 +273,6 @@ footer {
   margin-top: calc(var(--spacing) * 2);
 }
 
-/*──────────────────────────┐
-│      Cookie Banner       │
-└──────────────────────────*/
 #cookie-banner {
   position: fixed;
   bottom: 0;
