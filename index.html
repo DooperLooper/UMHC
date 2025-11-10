@@ -1,61 +1,71 @@
+<!-- welcome.html -->
+<!DOCTYPE html>
 <html lang="en">
+<head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>UMHC 2026 - Welcome</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Crimson+Text:wght@700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>UMHC 2026 – Welcome</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Crimson+Text:wght@700&display=swap" rel="stylesheet">
 <style>
-body {
-margin: 0;
-font-family: 'Roboto', sans-serif;
-background-color: #F4F4F4;
-color: #4D4F53;
+:root{
+--dsu-blue:#004165; /* primary */
+--dsu-blue-accent:#00A9E0; /* accent */
+--text:#4D4F53; /* dark gray */
+--panel:#FFFFFF; /* white card */
+--page:#F4F4F4; /* page bg */
+--radius:12px;
+--shadow:0 8px 24px rgba(0,0,0,.08);
+--space:clamp(16px,2vw,24px);
 }
-.container {
-max-width: 800px;
-margin: 5% auto;
-padding: 2em;
-background: #ffffff;
-border-radius: 8px;
-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+margin:0;
+font-family:'Roboto',system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif;
+color:var(--text);
+background:var(--page);
+-webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
 }
-h1 {
-font-family: 'Crimson Text', serif;
-color: #004165;
-text-align: center;
+/* Simple DSU masthead */
+.masthead{background:var(--dsu-blue); color:#fff}
+.masthead .inner{max-width:1100px; margin:0 auto; padding:.75rem 1rem; display:flex; align-items:center; gap:.75rem}
+.brand-dot{width:10px; height:10px; border-radius:9999px; background:var(--dsu-blue-accent)}
+.masthead h1{font:700 1.1rem/1 'Crimson Text',serif; margin:0}
+
+
+.hero{background:linear-gradient(135deg,var(--dsu-blue) 0%,#003654 65%); color:#fff}
+.hero .inner{max-width:1100px; margin:0 auto; padding:clamp(32px,6vw,72px) 1rem}
+.kicker{letter-spacing:.08em; text-transform:uppercase; font-weight:600; opacity:.9}
+.hero h2{font-family:'Crimson Text',serif; font-size:clamp(1.8rem,4vw,2.6rem); margin:.35rem 0 0}
+
+
+.container{max-width:1100px; margin:0 auto; padding: clamp(16px,3vw,32px) 1rem}
+.card{background:var(--panel); border-radius:var(--radius); box-shadow:var(--shadow); padding:clamp(16px,3vw,28px)}
+.lead{font-size:1.05rem; line-height:1.65}
+
+
+.grid{display:grid; grid-template-columns:1.2fr .8fr; gap:clamp(16px,3vw,28px)}
+@media (max-width:860px){ .grid{grid-template-columns:1fr} }
+
+
+.btn{
+display:inline-flex; align-items:center; gap:.5rem;
+background:var(--dsu-blue); color:#fff; border:none; border-radius:10px;
+padding:.8rem 1.1rem; font-weight:600; text-decoration:none; cursor:pointer;
+box-shadow:0 6px 16px rgba(0,65,101,.25); transition:transform .05s ease, background .2s ease, box-shadow .2s ease;
 }
-p {
-font-size: 1.1em;
-line-height: 1.6;
-margin-top: 1em;
-}
-.button {
-display: block;
-width: max-content;
-margin: 2em auto 0;
-background-color: #004165;
-color: white;
-padding: 0.8em 1.5em;
-border: none;
-border-radius: 4px;
-text-decoration: none;
-font-size: 1em;
-transition: background-color 0.3s;
-}
-.button:hover {
-background-color: #003654;
-}
+.btn:hover{background:#003654}
+.btn:active{transform:translateY(1px)}
+
+
+.list{margin:.75rem 0 0; padding-left:1.1rem}
+.list li{margin:.35rem 0}
+
+
+footer{max-width:1100px; margin:24px auto 48px; padding:0 1rem; opacity:.8; font-size:.9rem}
+footer a{color:var(--dsu-blue-accent); text-decoration:none}
+footer a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
-<div class="container">
-<h1>Welcome to the Upper Midwest Honors Conference 2026</h1>
-<p>
-We are pleased to invite submissions for the 2026 Upper Midwest Honors Conference hosted at Dakota State University. This year’s theme encourages academic exploration and interdisciplinary collaboration.
-</p>
-<p>
-If you are a student, faculty, or staff member interested in presenting a paper, poster, workshop, or roundtable, please proceed to the proposal submission form.
-</p>
-<a href="form.html" class="button">Submit Your Proposal</a>
-</div>
-</body>
-</html>
+<header class="masthead">
